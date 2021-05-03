@@ -39,7 +39,7 @@ nav li {
   margin: auto;
   display: flex;
   justify-content: center;
-  width: 2048px;
+  width: 100%;
   height: 1564px;
   overflow-x: hidden;
 }
