@@ -9,6 +9,7 @@
 
 body {
   overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 a {
@@ -43,16 +44,18 @@ nav li {
   height: 1564px;
   overflow-x: hidden;
 }
-.content img {
-  object-fit: cover;
-}
 .content p {
+  color: black;
   margin: 0 auto;
   padding-top: 10px;
   text-align: center;
   font-size: 50px;
   z-index: 12;
   position: fixed;
+}
+.content p:after {
+  color: white;
+  mix-blend-mode: difference;
 }
 
 .layer {
@@ -156,6 +159,24 @@ nav li {
   animation: ground-shift 20s linear infinite;
 }
 
+.bird {
+  background-image: url("../img/bird-cells.svg");
+  background-size: auto 100%;
+  width: 86px;
+  height: 125px;
+  will-change: background-position;
+  animation-name: fly-cycle;
+  animation-timing-function: steps(10);
+  animation-iteration-count: infinite;
+  animation-duration: 1s;
+  animation-delay: -0.5s;
+}
+
+@keyframes fly-cycle {
+  100% {
+    background-position: -900px 0;
+  }
+}
 @keyframes clouds-shift {
   from {
     background-position: 0 0;
