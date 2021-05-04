@@ -220,10 +220,10 @@ nav {
 .car {
   height: 1546px;
   width:100%;
-  background-image: url('../img/car.png');
+  background-image: url('../img/car2.png');
   background-repeat: repeat-x;
   transform: translateX(0);
-  animation: car-shift 10s linear infinite;
+  animation: car-shift 40s linear infinite;
 }
 
 .ground {
@@ -340,7 +340,7 @@ nav {
 
 @keyframes car-shift {
   from { background-position: 0 0; }
-  to { background-position: -2048px 0; }
+  to { background-position: -12000px 0; }
 }
 
 @keyframes ground-shift {
