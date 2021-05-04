@@ -20,6 +20,11 @@
   <link rel="stylesheet" href="css/styles.scss">
   <link rel="stylesheet" href="css/styles.css">
 
+  <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+
   <meta name="theme-color" content="#fafafa">
 
 </head>
@@ -38,9 +43,9 @@
 </header>
 <div class="content">
   <!-- Add your site or application content here -->
-  <p>Parallax image animation challenge</p>
+  <p class="animate__animated animate__bounce animate__delay-2s">Parallax image animation challenge</p>
   <h6>Press arrow keys to move the bird, shift to crash it,<br>
-    enter to make it a dove, backspace for stealth mode</h6>
+    enter to make it a dove, backspace for stealth mode, escape to drop balloon</h6>
 
   <div class="layer background">
   </div>
@@ -54,7 +59,9 @@
   </div>
   <div class="layer hugeclouds">
   </div>
-  <div class="layer balloon">
+  <div class="layer kite" id="kite">
+  </div>
+  <div class="layer balloon" id="balloon">
   </div>
   <div class="layer hill">
   </div>
@@ -72,7 +79,7 @@
   </div>
   <div class="container" id="bird">
     <div class="bird-container bird-container--one">
-      <div class="bird bird--one"></div>
+      <div class="bird bird--one" id="birdimg"></div>
     </div>
   </div>
 

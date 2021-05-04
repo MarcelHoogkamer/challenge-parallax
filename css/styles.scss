@@ -40,6 +40,8 @@ nav {
     list-style: none;
     display: inline-block;
     padding: 20px;
+    filter: invert(0%);
+    animation: invertbg 20s ease-in-out 0s forwards;
   }
 }
 
@@ -94,7 +96,7 @@ nav {
   width:100%;
   background-image: url('../img/11_background.png');
   background-repeat: repeat-x;
-  filter: invert(0%);
+  filter: invert(0%), grayscale(0%);
   animation: invertbg 20s ease-in-out 0s forwards;
 }
 
@@ -131,7 +133,8 @@ nav {
   background-image: url('../img/07_huge_clouds.png');
   background-repeat: repeat-x;
   transform: translateX(0);
-  animation: hugeclouds-shift 60s linear infinite;
+  filter: grayscale(0%);
+  animation: hugeclouds-shift 90s linear infinite;
 }
 
 .sun {
@@ -143,6 +146,18 @@ nav {
   background-repeat: no-repeat;
   transform: translateY(0);
   animation: sun-shift 160s linear infinite;
+}
+
+.kite {
+  background-image: url("../img/kite.png");
+  background-size: auto 100%;
+  will-change: background-position;
+  top: -200px;
+  height: 1546px;
+  width:100%;
+  background-repeat: no-repeat;
+  transform: translateX(0);
+  animation: kite-shift 5s linear infinite;
 }
 
 .balloon {
@@ -253,6 +268,22 @@ nav {
   to { background-position: 0 2048px; }
 }
 
+@keyframes kite-shift {
+  0% {
+    transform: translateY(0);
+  }
+  60% {
+    transform: translateY(100px);
+  }
+  80% {
+    transform: translateY(50px);
+  }
+  100% {
+    transform: translateY(80);
+  }
+}
+
+
 @keyframes balloon-shift {
   from { background-position: 0 0; }
   to { background-position: 2048px 0; }
@@ -275,9 +306,11 @@ nav {
 
 @keyframes hugeclouds-shift {
   from { background-position: 0 0;
-  opacity: 1; }
+  opacity: 1;
+    filter: grayscale(0%); }
   to { background-position: -2048px 0;
-  opacity: 0.1; }
+  opacity: 0.1;
+    filter: grayscale(100%);}
 }
 
 @keyframes hill-shift {
