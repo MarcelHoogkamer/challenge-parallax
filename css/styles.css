@@ -9,7 +9,6 @@
 
 body {
   overflow-x: hidden;
-  overflow-y: hidden;
 }
 
 a {
@@ -37,12 +36,13 @@ nav li {
 
 .content {
   position: relative;
+  top: 0;
   margin: auto;
   display: flex;
   justify-content: center;
   width: 100%;
   height: 1564px;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 .content p {
   color: black;
@@ -52,10 +52,18 @@ nav li {
   font-size: 50px;
   z-index: 12;
   position: fixed;
+  filter: invert(0%);
+  animation: invertbg 20s ease-in-out 0s forwards;
 }
-.content p:after {
-  color: white;
-  mix-blend-mode: difference;
+.content h6 {
+  z-index: 12;
+  color: black;
+  margin: 0 auto;
+  padding-top: 60px;
+  text-align: center;
+  position: fixed;
+  filter: invert(0%);
+  animation: invertbg 20s ease-in-out 0s forwards;
 }
 
 .layer {
@@ -67,6 +75,8 @@ nav li {
   width: 100%;
   background-image: url("../img/11_background.png");
   background-repeat: repeat-x;
+  filter: invert(0%);
+  animation: invertbg 20s ease-in-out 0s forwards;
 }
 
 .clouds {
@@ -103,6 +113,29 @@ nav li {
   background-repeat: repeat-x;
   transform: translateX(0);
   animation: hugeclouds-shift 60s linear infinite;
+}
+
+.sun {
+  background-image: url("../img/sun.png");
+  background-size: auto 100%;
+  will-change: background-position;
+  height: 1546px;
+  width: 100%;
+  background-repeat: no-repeat;
+  transform: translateY(0);
+  animation: sun-shift 160s linear infinite;
+}
+
+.balloon {
+  background-image: url("../img/balloon.png");
+  background-size: auto 100%;
+  will-change: background-position;
+  top: -200px;
+  height: 1546px;
+  width: 100%;
+  background-repeat: no-repeat;
+  transform: translateX(0);
+  animation: balloon-shift 60s linear infinite;
 }
 
 .hill {
@@ -150,6 +183,15 @@ nav li {
   animation: treesbushes-shift 20s linear infinite;
 }
 
+.car {
+  height: 1546px;
+  width: 100%;
+  background-image: url("../img/car.png");
+  background-repeat: repeat-x;
+  transform: translateX(0);
+  animation: car-shift 10s linear infinite;
+}
+
 .ground {
   height: 1546px;
   width: 100%;
@@ -170,11 +212,36 @@ nav li {
   animation-iteration-count: infinite;
   animation-duration: 1s;
   animation-delay: -0.5s;
+  overflow: hidden;
 }
 
+@keyframes invertbg {
+  from {
+    filter: invert(0%);
+  }
+  to {
+    filter: invert(100%);
+  }
+}
 @keyframes fly-cycle {
   100% {
     background-position: -900px 0;
+  }
+}
+@keyframes sun-shift {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 0 2048px;
+  }
+}
+@keyframes balloon-shift {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 2048px 0;
   }
 }
 @keyframes clouds-shift {
@@ -204,9 +271,11 @@ nav li {
 @keyframes hugeclouds-shift {
   from {
     background-position: 0 0;
+    opacity: 1;
   }
   to {
     background-position: -2048px 0;
+    opacity: 0.1;
   }
 }
 @keyframes hill-shift {
@@ -242,6 +311,14 @@ nav li {
   }
 }
 @keyframes treesbushes-shift {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -2048px 0;
+  }
+}
+@keyframes car-shift {
   from {
     background-position: 0 0;
   }

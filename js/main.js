@@ -7,21 +7,41 @@ function init(){
 }
 
 function getKeyAndMove(e){
-  var key_code=e.which||e.keyCode;
+  var key_code=e.key;
   switch(key_code){
-    case 37:
+    case 'ArrowLeft':
       moveLeft();
       break;
-    case 38:
+    case 'ArrowUp':
       moveUp();
       break;
-    case 39:
+    case 'ArrowRight':
       moveRight();
       break;
-    case 40:
+    case 'ArrowDown':
       moveDown();
       break;
+    case 'Shift':
+      downCrash();
+      break;
+    case 'Enter':
+      makeDove();
+      break;
+    case 'Backspace':
+      stealthMode();
+      break;
   }
+}
+
+function stealthMode(){
+  objImage.style.opacity= '0.1';
+}
+
+function makeDove(){
+  objImage.style.filter= 'invert(100%)';
+}
+function downCrash(){
+  objImage.style.top=parseInt(objImage.style.top)+1200 +'px';
 }
 function moveLeft(){
   objImage.style.left=parseInt(objImage.style.left)-5 +'px';
